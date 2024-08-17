@@ -43,7 +43,7 @@ export default function ChangePasswordPage() {
           {...form.register("currentPassword", {
             required: true,
             validate: (value) =>
-              value === user?.password || "Icorrect password",
+              value === user?.password || "Incorrect password",
           })}
           type="password"
           showAdornments
