@@ -65,7 +65,6 @@ namespace UserAPI.Controllers
             return NoContent();
         }
 
-        // Si necesitas un método para crear el usuario inicial:
         [HttpPost]
         public async Task<ActionResult<User>> CreateUser([FromBody] User newUser)
         {
