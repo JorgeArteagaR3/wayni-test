@@ -18,16 +18,16 @@ Esta aplicación consiste en una API backend desarrollada con .NET y un frontend
 
 ## Iniciar el backend (API)
 
-1. Abre una terminal y navega al directorio de la API:
-2. Ejecuta el siguiente comando para iniciar la API: dotnet run
+1. Abre una terminal y navega al directorio de la API: `cd api`
+2. Ejecuta el siguiente comando para iniciar la API: `dotnet run`
 La API estará disponible en `https://localhost:5262` (o el puerto que hayas configurado).
 3. Inicia la aplicación React: El frontend estará disponible en `http://localhost:5173` (o el puerto que Vite asigne).
 
 
 
 ## Iniciar el frontend
-1. Abre una nueva terminal y navega al directorio del frontend: cd frontend
-2. Instala las dependencias (si aún no lo has hecho): npm install
+1. Abre una nueva terminal y navega al directorio del frontend: `cd frontend`
+2. Instala las dependencias (si aún no lo has hecho): `npm install`
 
 ## Notas adicionales
 
