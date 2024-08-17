@@ -45,7 +45,6 @@ namespace UserAPI.Services
             await _usersCollection.ReplaceOneAsync(_ => true, updatedUser);
         }
 
-        // Si aún no tienes un usuario y necesitas crearlo:
         public async Task CreateUserAsync(User newUser)
         {
             await _usersCollection.InsertOneAsync(newUser);
