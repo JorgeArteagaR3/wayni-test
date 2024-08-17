@@ -40,9 +40,7 @@ export const updateUserName = async ({
 
 export const updateUserUsername = async ({
   newUserName,
-}: UserUserNameFormInputs & {
-  oldUserName: string;
-}) => {
+}: UserUserNameFormInputs) => {
   try {
     await fetch(`${BASE_URL}/username`, {
       method: "PUT",

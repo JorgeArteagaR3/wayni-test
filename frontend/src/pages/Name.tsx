@@ -3,12 +3,20 @@ import FormWrapper from "../components/FormWrapper";
 import Input from "../components/ui/Input";
 import { NameFormInputs } from "../types/user";
 import { updateUserName } from "../services/user";
+import { useUser } from "../context/UserContext";
 
 export default function NamePage() {
   const form = useForm<NameFormInputs>();
-
+  const { setUser } = useUser();
   const handleSubmit = form.handleSubmit(async (data) => {
     await updateUserName(data);
+    setUser((prev) => {
+      if (!prev) return null;
+      return {
+        ...prev,
+        name: `${data.firstName} ${data.lastName}`,
+      };
+    });
     form.reset();
   });
 

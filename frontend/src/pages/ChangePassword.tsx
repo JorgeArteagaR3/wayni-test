@@ -12,10 +12,19 @@ import { toast } from "sonner";
 export default function ChangePasswordPage() {
   const form = useForm<ChangePasswordFormInputs>();
   const { errors } = form.formState;
+  const { setUser } = useUser();
   const handleSubmit = form.handleSubmit(async (data) => {
     toast.promise(changePassword(data), {
       loading: "Loading...",
       success: "Password updated succesfully",
+    });
+
+    setUser((prev) => {
+      if (!prev) return null;
+      return {
+        ...prev,
+        password: data.newPassword,
+      };
     });
     form.reset();
   });

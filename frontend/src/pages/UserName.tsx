@@ -6,7 +6,7 @@ import { useUser } from "../context/UserContext";
 import { updateUserUsername } from "../services/user";
 
 export default function UserNamePage() {
-  const { user } = useUser();
+  const { user, setUser } = useUser();
 
   const form = useForm<UserUserNameFormInputs>();
 
@@ -14,15 +14,21 @@ export default function UserNamePage() {
     if (!user) return;
 
     await updateUserUsername({
-      oldUserName: user.name,
       newUserName: newUserName,
+    });
+    setUser((prev) => {
+      if (!prev) return null;
+      return {
+        ...prev,
+        username: newUserName,
+      };
     });
     form.reset();
   });
   return (
     <section>
       <FormWrapper
-        formDisabled={!form.formState.isValid && form.formState.isDirty}
+        formDisabled={!form.formState.isValid}
         onSubmit={handleSubmit}
       >
         <Input
