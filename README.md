@@ -28,6 +28,7 @@ La API estará disponible en `https://localhost:5262` (o el puerto que hayas con
 ## Iniciar el frontend
 1. Abre una nueva terminal y navega al directorio del frontend: `cd frontend`
 2. Instala las dependencias (si aún no lo has hecho): `npm install`
+3. Levanta el app ejecutando: `npm run dev`
 
 ## Notas adicionales
 
