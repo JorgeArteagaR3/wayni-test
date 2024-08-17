@@ -68,7 +68,7 @@ export const changePassword = async ({
 
     await fetch(`${BASE_URL}/password`, {
       method: "PUT",
-      body: JSON.stringify(newPassword.replace(/\s+/g, "").toLowerCase()),
+      body: JSON.stringify(newPassword),
       headers: {
         "Content-Type": "application/json",
       },
